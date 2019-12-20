@@ -12,6 +12,6 @@ import lombok.Data;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RateValue {
 
-    private String australianDolar;
-    private String brazilianReal;
+    private double australianDolar;
+    private double brazilianReal;
 }

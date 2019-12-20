@@ -1,4 +1,5 @@
 
 microservice:
   rates:
+    host: "http://data.fixer.io/api/latest"
     api_key: "3337f4212c047f9522c4f2a7fcbe3c5c"

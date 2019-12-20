@@ -10,6 +10,6 @@ import lombok.Data;
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class Rate {
 
-    private String AUD;
-    private String BRL;
+    private double AUD;
+    private double BRL;
 }

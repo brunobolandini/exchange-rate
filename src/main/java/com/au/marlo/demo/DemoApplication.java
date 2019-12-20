@@ -1,5 +1,6 @@
 package com.au.marlo.demo;
 
+import com.au.marlo.demo.configuration.DemoConfiguration;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
@@ -21,4 +22,8 @@ public class DemoApplication {
         return new RestTemplate();
     }
 
+    @Bean
+    public DemoConfiguration demoConfiguration() {
+        return new DemoConfiguration();
+    }
 }
