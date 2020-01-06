@@ -15,6 +15,7 @@ public class RateDetailsMapper {
         rateDetailsEntity.setBase(rateRequest.getBase());
         rateDetailsEntity.setDate(rateRequest.getDate());
         rateDetailsEntity.setTimestamp(LocalDateTime.now());
+        rateDetailsEntity.setUpdatedOn(LocalDateTime.now());
         return rateDetailsEntity;
     }
 

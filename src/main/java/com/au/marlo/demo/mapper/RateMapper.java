@@ -15,8 +15,8 @@ public class RateMapper {
                            .base(rateData.getBase())
                            .date(rateData.getDate())
                            .rates(RateValue.builder()
-                                           .australianDolar(rateData.getRates().getAUD())
-                                           .brazilianReal(rateData.getRates().getBRL())
+                                           .australianDolar(rateData.getRates().get("AUD"))
+                                           .brazilianReal(rateData.getRates().get("BRL"))
                                            .build())
                            .build();
 

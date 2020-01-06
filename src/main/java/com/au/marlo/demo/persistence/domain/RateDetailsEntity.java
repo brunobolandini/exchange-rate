@@ -12,7 +12,7 @@ public class RateDetailsEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(name = "SUCCESS")
     private String success;

@@ -1,5 +1,8 @@
 package com.au.marlo.demo.client.model;
 
+import java.math.BigDecimal;
+import java.util.Map;
+
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
@@ -14,5 +17,5 @@ public class RateData {
     private String timestamp;
     private String base;
     private String date;
-    private Rate rates;
+    private Map<String, BigDecimal> rates;
 }

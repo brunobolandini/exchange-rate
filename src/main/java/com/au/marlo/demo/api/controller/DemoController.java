@@ -31,7 +31,8 @@ public class DemoController implements DemoOperations {
     @PostMapping(path = "/insert_rates")
     public ResponseEntity saveRates(@RequestBody RateRequest rateRequest) {
         saveRatesService.saveRates(rateRequest);
-        return ResponseEntity.notFound().build();
+        return ResponseEntity.noContent()
+                             .build();
     }
 
 

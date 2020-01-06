@@ -1,4 +1,5 @@
 
+
 microservice:
   rates:
     host: "http://data.fixer.io/api/latest"
