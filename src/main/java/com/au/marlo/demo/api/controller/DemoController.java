@@ -1,7 +1,7 @@
 package com.au.marlo.demo.api.controller;
 
 import com.au.marlo.demo.api.model.RateRequest;
-import com.au.marlo.demo.service.RatesService;
+import com.au.marlo.demo.service.GetRatesService;
 import com.au.marlo.demo.service.SaveRatesService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,23 +12,23 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class DemoController implements DemoOperations {
 
-    private final RatesService demoService;
+    private final GetRatesService getRatesService;
 
     private final SaveRatesService saveRatesService;
 
-    public DemoController(RatesService demoService, SaveRatesService saveRatesService) {
-        this.demoService = demoService;
+    public DemoController(GetRatesService demoService, SaveRatesService saveRatesService) {
+        this.getRatesService = demoService;
         this.saveRatesService = saveRatesService;
     }
 
     @Override
     @GetMapping(path = "/rates")
     public ResponseEntity rates() {
-        return ResponseEntity.ok(demoService.user());
+        return ResponseEntity.ok(getRatesService.rate());
     }
 
     @Override
-    @PostMapping(path = "/insert_rates")
+    @PostMapping(path = "/insert_rate")
     public ResponseEntity saveRates(@RequestBody RateRequest rateRequest) {
         saveRatesService.saveRates(rateRequest);
         return ResponseEntity.noContent()

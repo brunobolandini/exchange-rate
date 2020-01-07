@@ -9,23 +9,24 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RatesService {
+public class GetRatesService {
 
-    private final Logger log = LoggerFactory.getLogger(RatesService.class);
+    private final Logger log = LoggerFactory.getLogger(GetRatesService.class);
 
     private final RateClient rateClient;
     private final RateMapper rateMapper;
 
-    public RatesService(RateClient rateClient, RateMapper rateMapper) {
+    public GetRatesService(RateClient rateClient, RateMapper rateMapper) {
         this.rateClient = rateClient;
         this.rateMapper = rateMapper;
     }
 
-    public RateResponse user() {
-        RateData rateData = rateClient.getRate();
+    public RateResponse rate() {
+
+        RateData rateData = rateClient.getFixerRate();
         log.debug("Data: {}", rateData);
         if (rateData != null) {
-            return rateMapper.commonUserMapping(rateData);
+            return rateMapper.commonRateMapping(rateData);
         }
 
         return null;

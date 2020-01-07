@@ -20,7 +20,7 @@ public class RateClient {
         this.demoConfiguration = demoConfiguration;
     }
 
-    public RateData getRate() {
+    public RateData getFixerRate() {
         HttpHeaders headers = new HttpHeaders();
         String url = urlBuilder();
         headers.add("user-agent",

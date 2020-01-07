@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class RateMapper {
 
-    public RateResponse commonUserMapping(RateData rateData) {
+    public RateResponse commonRateMapping(RateData rateData) {
         return RateResponse.builder()
                            .success(rateData.getSuccess())
                            .timestamp(rateData.getTimestamp())

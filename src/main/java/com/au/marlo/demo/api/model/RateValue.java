@@ -1,7 +1,6 @@
 package com.au.marlo.demo.api.model;
 
 import java.math.BigDecimal;
-import java.util.Currency;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;

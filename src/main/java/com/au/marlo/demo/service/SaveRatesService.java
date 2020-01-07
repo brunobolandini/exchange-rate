@@ -1,6 +1,7 @@
 package com.au.marlo.demo.service;
 
 import com.au.marlo.demo.api.model.RateRequest;
+import com.au.marlo.demo.api.model.RateResponse;
 import com.au.marlo.demo.mapper.RateDetailsMapper;
 import com.au.marlo.demo.persistence.domain.RateDetailsEntity;
 import com.au.marlo.demo.persistence.repository.DemoRepository;
@@ -22,13 +23,19 @@ public class SaveRatesService {
         this.rateDetailsMapper = rateDetailsMapper;
     }
 
-    public void saveRates(RateRequest rateRequest) {
+    public RateResponse saveRates(RateRequest rateRequest) {
         RateDetailsEntity rateDetailsEntity = rateDetailsMapper.rateDetailsEntityMapping(rateRequest);
         try {
             demoRepository.save(rateDetailsEntity);
+            return RateResponse.builder()
+                               .success("true")
+                               .build();
         } catch (Exception e) {
             log.error("Exception when persisting rates details: {}", e.getMessage());
         }
+        return RateResponse.builder()
+                           .success("false")
+                           .build();
     }
 
 }
