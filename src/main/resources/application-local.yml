@@ -20,3 +20,6 @@ spring:
     password:
   flyway:
     locations: ["classpath:h2/db/migration"]
+logging:
+  file:
+    path: C:\tmg\logs\demo
