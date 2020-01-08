@@ -24,3 +24,5 @@ logging:
       apache:
         http:
           wire: debug
+  file:
+    path: C:\tmg\logs\demo

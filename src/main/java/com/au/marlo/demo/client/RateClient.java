@@ -32,7 +32,7 @@ public class RateClient {
 
     }
 
-    private String urlBuilder() {
+    protected String urlBuilder() {
         return demoConfiguration.getHost() + "?access_key=" + demoConfiguration.getApiKey();
     }
 }
