@@ -1,7 +1,7 @@
 package com.marlo.demo.api.controller;
 
-import com.marlo.demo.exception.MethodNotImplementedException;
 import com.marlo.demo.exception.InvalidBodyException;
+import com.marlo.demo.exception.MethodNotImplementedException;
 import com.marlo.demo.utils.error.ApiError;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -13,17 +13,21 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 @ControllerAdvice
-public class RateControllerAdvice
-    extends ResponseEntityExceptionHandler {
+public class RateControllerAdvice extends ResponseEntityExceptionHandler {
+
     @Override
-    public ResponseEntity<Object> handleHttpRequestMethodNotSupported (HttpRequestMethodNotSupportedException ex,
-                                                                            HttpHeaders headers, HttpStatus status, WebRequest request){
-        return new ResponseEntity<>(new ApiError(new MethodNotImplementedException("Only available methods are gets and posts.").getMessage(),"0001"), HttpStatus.NOT_IMPLEMENTED);
+    public ResponseEntity<Object> handleHttpRequestMethodNotSupported(HttpRequestMethodNotSupportedException ex,
+                                                                      HttpHeaders headers, HttpStatus status, WebRequest request) {
+        return new ResponseEntity<>(
+                new ApiError(new MethodNotImplementedException("Only available methods are gets and posts.").getMessage(), "0001"),
+                HttpStatus.NOT_IMPLEMENTED);
     }
 
     @Override
-    protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
-        return new ResponseEntity<>(new ApiError(new InvalidBodyException("Invalid request body").getMessage(),"000034"), HttpStatus.BAD_REQUEST);
+    protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers,
+                                                                  HttpStatus status, WebRequest request) {
+        return new ResponseEntity<>(new ApiError(new InvalidBodyException("Invalid request body").getMessage(), "000034"),
+                                    HttpStatus.BAD_REQUEST);
     }
 
 }
