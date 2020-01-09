@@ -21,6 +21,11 @@ public class GetRatesService {
         this.rateMapper = rateMapper;
     }
 
+    /**
+     * Fetch rates from the API
+     *
+     * @return response containing exchange rates
+     */
     public RateResponse rate() {
 
         RateData rateData = rateClient.getFixerRate();

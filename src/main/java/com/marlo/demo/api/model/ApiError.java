@@ -1,4 +1,4 @@
-package com.marlo.demo.utils.error;
+package com.marlo.demo.api.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;

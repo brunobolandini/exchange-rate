@@ -18,11 +18,18 @@ public class SaveRatesService {
 
     private final RateDetailsMapper rateDetailsMapper;
 
+
     public SaveRatesService(DemoRepository demoRepository, RateDetailsMapper rateDetailsMapper) {
         this.demoRepository = demoRepository;
         this.rateDetailsMapper = rateDetailsMapper;
     }
 
+    /***
+     * Insert fetched rate in the data repository
+     *
+     * @param rateRequest requested rate details
+     * @return success message.
+     */
     public RateResponse saveRates(RateRequest rateRequest) {
         RateDetailsEntity rateDetailsEntity = rateDetailsMapper.rateDetailsEntityMapping(rateRequest);
         try {

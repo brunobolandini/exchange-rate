@@ -8,6 +8,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class RateMapper {
 
+    /**
+     * Mapping rate data object from external API to response object
+     * @param rateData rates fetched from PI
+     * @return Rate response object
+     */
     public RateResponse commonRateMapping(RateData rateData) {
         return RateResponse.builder()
                            .success(rateData.getSuccess())

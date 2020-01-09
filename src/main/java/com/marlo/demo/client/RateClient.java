@@ -20,6 +20,11 @@ public class RateClient {
         this.demoConfiguration = demoConfiguration;
     }
 
+    /**
+     * Call to Fixer API to get current rates
+     *
+     * @return fetched rates
+     */
     public RateData getFixerRate() {
         HttpHeaders headers = new HttpHeaders();
         String url = urlBuilder();

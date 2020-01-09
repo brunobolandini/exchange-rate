@@ -9,6 +9,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class RateDetailsMapper {
 
+    /**
+     * Create persistence object rate details
+     *
+     * @param rateRequest requested rate details
+     * @return persistence object
+     */
     public RateDetailsEntity rateDetailsEntityMapping(RateRequest rateRequest) {
         RateDetailsEntity rateDetailsEntity = new RateDetailsEntity();
         rateDetailsEntity.setSuccess(rateRequest.getSuccess());
