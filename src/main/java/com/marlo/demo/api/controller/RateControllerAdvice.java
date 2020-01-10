@@ -13,8 +13,8 @@ import org.springframework.web.context.request.WebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExceptionHandler;
 
 @ControllerAdvice
-public class RateControllerAdvice
-    extends ResponseEntityExceptionHandler {
+public class RateControllerAdvice extends ResponseEntityExceptionHandler {
+
     @Override
     protected ResponseEntity<Object> handleHttpRequestMethodNotSupported (HttpRequestMethodNotSupportedException ex,
                                                                             HttpHeaders headers, HttpStatus status, WebRequest request){
@@ -22,8 +22,10 @@ public class RateControllerAdvice
     }
 
     @Override
-    protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers, HttpStatus status, WebRequest request) {
-        return new ResponseEntity<>(new ApiError(new InvalidBodyException("Invalid request body").getMessage(),"000034"), HttpStatus.BAD_REQUEST);
+    protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers,
+                                                                  HttpStatus status, WebRequest request) {
+        return new ResponseEntity<>(new ApiError(new InvalidBodyException("Invalid request body").getMessage(), "000034"),
+                                    HttpStatus.BAD_REQUEST);
     }
 
 }
