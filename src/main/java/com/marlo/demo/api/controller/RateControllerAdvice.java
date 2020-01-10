@@ -16,16 +16,18 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 public class RateControllerAdvice extends ResponseEntityExceptionHandler {
 
     @Override
-    protected ResponseEntity<Object> handleHttpRequestMethodNotSupported (HttpRequestMethodNotSupportedException ex,
-                                                                            HttpHeaders headers, HttpStatus status, WebRequest request){
-        return new ResponseEntity<>(new ApiError(new MethodNotImplementedException("Only available methods are gets and posts.").getMessage(),"0001"), HttpStatus.NOT_IMPLEMENTED);
+    protected ResponseEntity<Object> handleHttpRequestMethodNotSupported(HttpRequestMethodNotSupportedException ex,
+                                                                         HttpHeaders headers, HttpStatus status, WebRequest request) {
+        return new ResponseEntity<>(
+            new ApiError(new MethodNotImplementedException("Only available methods are gets and posts.").getMessage(), "0001"),
+            HttpStatus.NOT_IMPLEMENTED);
     }
 
     @Override
     protected ResponseEntity<Object> handleHttpMessageNotReadable(HttpMessageNotReadableException ex, HttpHeaders headers,
                                                                   HttpStatus status, WebRequest request) {
         return new ResponseEntity<>(new ApiError(new InvalidBodyException("Invalid request body").getMessage(), "000034"),
-                                    HttpStatus.BAD_REQUEST);
+            HttpStatus.BAD_REQUEST);
     }
 
 }
