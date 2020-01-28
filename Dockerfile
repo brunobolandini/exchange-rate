@@ -6,7 +6,7 @@ COPY . /opt
 
 WORKDIR /opt
 
-ENV APP_NAME=exchange-rate-spring-boot-demo-0.0.1-SNAPSHOT
+ENV APP_NAME=target/exchange-rate-spring-boot-demo-0.0.1-SNAPSHOT.jar
 ENV APP_PROFILE=dev
 
-CMD java -jar -Dspring.profiles.active=$ $APP_NAME -Xms512M -Xmx768MAPP_PROFILE
+CMD java -jar -Dspring.profiles.active=$ $APP_NAME -Xms512M -Xmx7   68MAPP_PROFILE

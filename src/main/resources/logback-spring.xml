@@ -36,6 +36,19 @@
         </root>
     </springProfile>
 
+    <springProfile name="dev">
+        <logger name="com.au.marlo" level="DEBUG"/>
+        <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+            <layout class="ch.qos.logback.classic.PatternLayout">
+                <Pattern>${CONSOLE_LOG_PATTERN}</Pattern>
+            </layout>
+        </appender>
+        <root level="info">
+            <appender-ref ref="STDOUT"/>
+            <appender-ref ref="FILE"/>
+        </root>
+    </springProfile>
+
 
     <include file="${user.dir}/logback-overrides.xml" />
 </configuration>
