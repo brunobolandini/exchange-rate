@@ -7,5 +7,8 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface DemoRepository extends JpaRepository<RateDetailsEntity, Long> {
 
+
     RateDetailsEntity save(RateDetailsEntity rateDetailsEntity);
+
+
 }

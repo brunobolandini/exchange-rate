@@ -1,0 +1,15 @@
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: none
+      dialect: org.hibernate.dialect.MySQL5Dialect
+    database-platform: mysql
+    properties:
+      show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/demo
+    driverClassName: com.mysql.jdbc.Driver
+    username: root
+    password: password
+  flyway:
+    locations: ["classpath:mysql/db/migration"]

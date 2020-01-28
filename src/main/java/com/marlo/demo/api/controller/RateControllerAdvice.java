@@ -1,8 +1,8 @@
 package com.marlo.demo.api.controller;
 
-import com.marlo.demo.exception.MethodNotImplementedException;
-import com.marlo.demo.exception.InvalidBodyException;
 import com.marlo.demo.api.model.ApiError;
+import com.marlo.demo.exception.InvalidBodyException;
+import com.marlo.demo.exception.MethodNotImplementedException;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
