@@ -17,5 +17,6 @@ public class RateResponse {
     private String base;
     private String date;
     private RateValue rates;
+    private String appVersion;
 
 }
