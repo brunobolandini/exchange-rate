@@ -2,8 +2,7 @@ spring:
   jpa:
     hibernate:
       ddl-auto: none
-      dialect: org.hibernate.dialect.MySQL5Dialect
-    database-platform: mysql
+    database-platform: org.hibernate.dialect.MySQL5Dialect
     properties:
       show-sql: true
   datasource:

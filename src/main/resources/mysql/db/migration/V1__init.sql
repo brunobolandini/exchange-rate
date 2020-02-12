@@ -1,10 +1,10 @@
-DROP TABLE IF EXISTS RATE_DETAILS;
+DROP TABLE IF EXISTS rate_details;
 
-create table RATE_DETAILS (
-    ID            bigint identity not null primary key,
-    SUCCESS       nvarchar,
-    BASE          nvarchar(50),
-    DATE          nvarchar(50),
-    TIMESTAMP     nvarchar(50),
-    UPDATED_ON    TIMESTAMP
+CREATE TABLE rate_details (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  success VARCHAR(50),
+  base varchar(50),
+  request_date varchar(50),
+  request_timestamp varchar(50),
+  updated_on varchar(50)
 );
