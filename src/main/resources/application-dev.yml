@@ -6,7 +6,8 @@ spring:
     properties:
       show-sql: true
   datasource:
-    url: jdbc:mysql://localhost:3306/demo
+#    url: jdbc:mysql://192.168.99.100:3308/demo #local container db
+    url: jdbc:mysql://database-service:3306/demo #cluster container db
     driverClassName: com.mysql.jdbc.Driver
     username: root
     password: password

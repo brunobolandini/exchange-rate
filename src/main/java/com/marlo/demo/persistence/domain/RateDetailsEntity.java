@@ -20,10 +20,10 @@ public class RateDetailsEntity {
     @Column(name = "BASE")
     private String base;
 
-    @Column(name = "DATE")
+    @Column(name = "REQUEST_DATE")
     private String date;
 
-    @Column(name = "TIMESTAMP")
+    @Column(name = "REQUEST_TIMESTAMP")
     private LocalDateTime timestamp;
 
     @Column(name = "UPDATED_ON")
